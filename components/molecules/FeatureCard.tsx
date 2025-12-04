@@ -6,6 +6,7 @@ interface FeatureCardProps {
   title: string;
   description: string;
   className?: string;
+  index?: number;
 }
 
 export function FeatureCard({
@@ -13,19 +14,21 @@ export function FeatureCard({
   title,
   description,
   className,
+  index = 0
 }: FeatureCardProps) {
   return (
     <div
       className={cn(
-        "flex flex-col items-center rounded-lg border bg-card p-6 text-center transition-all hover:shadow-md",
+        "bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20 hover:bg-primary-foreground/15 transition-colors animate-fade-up",
         className
       )}
+      style={{ animationDelay: `${index * 100}ms` }}
     >
-      <div className="mb-4 rounded-full bg-primary/10 p-3">
-        <Icon className="size-6 text-primary" />
+      <div className="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-6">
+        <Icon className="h-7 w-7 text-accent-foreground" />
       </div>
-      <h3 className="mb-2 font-semibold">{title}</h3>
-      <p className="text-sm text-muted-foreground">{description}</p>
+      <h3 className="font-display text-xl font-bold mb-3">{title}</h3>
+      <p className="text-primary-foreground/70">{description}</p>
     </div>
   );
 }

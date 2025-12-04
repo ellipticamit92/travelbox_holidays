@@ -4,12 +4,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 interface Story {
-  title: string;
-  author?: string;
-  excerpt?: string;
+  id: number;
+  name?: string;
+  location?: string;
   image?: string;
-  date?: string;
-  href?: string;
+  trip?: string;
 }
 
 interface TravelStoriesSectionProps {
@@ -17,33 +16,55 @@ interface TravelStoriesSectionProps {
   showViewAll?: boolean;
 }
 
+
 const defaultStories: Story[] = [
   {
-    title: "Sunset in Santorini",
-    author: "Sarah Johnson",
-    excerpt:
-      "An unforgettable journey through the Greek islands, capturing the most beautiful sunsets.",
-    date: "March 15, 2024",
+    id: 1,
+    image: "/gallery-1.jpeg",
+    name: "The Sharma Family",
+    location: "Taj Mahal, Agra",
+    trip: "Golden Triangle Tour",
   },
   {
-    title: "Adventures in the Amazon",
-    author: "Michael Chen",
-    excerpt:
-      "Exploring the rainforest and discovering incredible wildlife and indigenous cultures.",
-    date: "February 28, 2024",
+    id: 2,
+    image: "/gallery-2.jpeg",
+    name: "Amit & Priya",
+    location: "Maldives",
+    trip: "Honeymoon Package",
   },
   {
-    title: "Tokyo Nights",
-    author: "Emma Williams",
-    excerpt:
-      "A week in Tokyo exploring neon-lit streets, traditional temples, and amazing cuisine.",
-    date: "February 10, 2024",
+    id: 3,
+    image: "/gallery-3.jpeg",
+    name: "College Friends",
+    location: "Burj Khalifa, Dubai",
+    trip: "Dubai Dazzle Tour",
+  },
+  {
+    id: 4,
+    image: "/gallery-4.jpeg",
+    name: "The Gupta Family",
+    location: "Kerala Backwaters",
+    trip: "Kerala Escape",
+  },
+  {
+    id: 5,
+    image: "/gallery-5.jpeg",
+    name: "Meera Singh",
+    location: "Ubud, Bali",
+    trip: "Bali Paradise Tour",
+  },
+  {
+    id: 6,
+    image: "/gallery-6.jpeg",
+    name: "Mr. & Mrs. Kapoor",
+    location: "Jaisalmer, Rajasthan",
+    trip: "Rajasthan Heritage",
   },
 ];
 
 export function TravelStoriesSection({
   stories = defaultStories,
-  showViewAll = true,
+  showViewAll = false,
 }: TravelStoriesSectionProps) {
   return (
     <section className="bg-muted/30 py-16 md:py-24">
@@ -52,14 +73,14 @@ export function TravelStoriesSection({
           label="Travel Stories"
           title={
             <>
-              Inspiring <span className="text-primary">Travel Experiences</span>
+              Moments From <span className="text-primary">Our Travelers</span>
             </>
           }
-          description="Real stories from travelers who explored the world with us"
+          description="Real memories from real travelers. See the joy and adventure our customers experience."
         />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {stories.map((story, index) => (
-            <StoryCard key={index} {...story} />
+            <StoryCard key={index} index={index} {...story} />
           ))}
         </div>
         {showViewAll && (
@@ -69,6 +90,15 @@ export function TravelStoriesSection({
             </Button>
           </div>
         )}
+
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground mb-2">
+            Share your travel memories with us!
+          </p>
+          <p className="text-accent font-semibold">
+            Tag us @travelboxholidays on Instagram
+          </p>
+        </div>
       </div>
     </section>
   );
