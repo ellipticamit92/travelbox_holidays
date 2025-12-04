@@ -65,8 +65,13 @@ export function WhyTravelWithUsSection({
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="Why Travel With Us"
-          subtitle="Experience the difference of traveling with experts"
+          label="Why Travel With Us"
+          title={
+            <>
+              Experience the <span className="text-primary">Difference</span>
+            </>
+          }
+          description="Travel with confidence knowing you're in the hands of experts"
         />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (

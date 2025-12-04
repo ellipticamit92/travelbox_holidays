@@ -1,15 +1,18 @@
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
 interface SectionTitleProps {
-  title: string;
-  subtitle?: string;
+  label?: string;
+  title: string | ReactNode;
+  description?: string;
   className?: string;
   align?: "left" | "center" | "right";
 }
 
 export function SectionTitle({
+  label,
   title,
-  subtitle,
+  description,
   className,
   align = "center",
 }: SectionTitleProps) {
@@ -19,13 +22,26 @@ export function SectionTitle({
     right: "text-right",
   };
 
+  const containerClasses = cn(
+    "max-w-2xl mx-auto mb-12",
+    alignClasses[align],
+    className
+  );
+
   return (
-    <div className={cn("mb-8", alignClasses[align], className)}>
-      <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+    <div className={containerClasses}>
+      {label && (
+        <p className="text-accent font-semibold tracking-wider uppercase mb-3 animate-fade-up">
+          {label}
+        </p>
+      )}
+      <h2 className="font-display text-3xl md:text-5xl text-foreground font-bold mb-4 animate-fade-up animation-delay-100">
         {title}
       </h2>
-      {subtitle && (
-        <p className="mt-2 text-lg text-muted-foreground">{subtitle}</p>
+      {description && (
+        <p className="text-muted-foreground text-lg animate-fade-up animation-delay-200">
+          {description}
+        </p>
       )}
     </div>
   );

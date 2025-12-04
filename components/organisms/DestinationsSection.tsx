@@ -1,53 +1,72 @@
+"use client";
+
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { DestinationCard } from "@/components/molecules/DestinationCard";
+import { Tabs } from "@/components/molecules/Tabs";
 import { Button } from "@/components/ui/button";
+import { Globe, Landmark } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 interface Destination {
   name: string;
   image?: string;
-  description?: string;
   href?: string;
+  subtitle?: string;
+  packages?: number;
 }
 
 interface DestinationsSectionProps {
-  destinations?: Destination[];
+  indianDestinations?: Destination[];
+  internationalDestinations?: Destination[];
   showViewAll?: boolean;
 }
 
-const defaultDestinations: Destination[] = [
-  {
-    name: "Paris, France",
-    description: "The City of Light awaits you with its romantic charm",
-  },
-  {
-    name: "Tokyo, Japan",
-    description: "Experience the perfect blend of tradition and modernity",
-  },
-  {
-    name: "Bali, Indonesia",
-    description: "Tropical paradise with stunning beaches and culture",
-  },
-  {
-    name: "New York, USA",
-    description: "The city that never sleeps offers endless adventures",
-  },
+const defaultIndianDestinations: Destination[] = [
+  { name: "Jaipur", subtitle: "The Pink City", image: "/jaipur.jpeg", packages: 12 },
+  { name: "Kerala", subtitle: "God's Own Country", image: "/kerala.jpeg", packages: 15 },
+  { name: "Ladakh", subtitle: "Land of High Passes", image: "/ladakh.jpeg", packages: 8 },
+  { name: "Varanasi", subtitle: "The Spiritual Capital", image: "/varanasi.jpeg", packages: 10 },
+];
+
+const defaultInternationalDestinations: Destination[] = [
+  { name: "Dubai", subtitle: "City of Gold", image: "/dubai.jpeg", packages: 18 },
+  { name: "Maldives", subtitle: "Tropical Paradise", image: "/maldives.jpeg", packages: 12 },
+  { name: "Bali", subtitle: "Island of Gods", image: "/bali.jpeg", packages: 14 },
+  { name: "Singapore", subtitle: "Garden City", image: "/singapore.jpeg", packages: 10 },
+];
+
+const tabs = [
+  { id: "indian", label: "Indian", icon: Landmark },
+  { id: "international", label: "International", icon: Globe },
 ];
 
 export function DestinationsSection({
-  destinations = defaultDestinations,
-  showViewAll = true,
+  indianDestinations = defaultIndianDestinations,
+  internationalDestinations = defaultInternationalDestinations,
+  showViewAll = false,
 }: DestinationsSectionProps) {
+  const [activeTab, setActiveTab] = useState("indian");
+
+  const currentDestinations =
+    activeTab === "indian" ? indianDestinations : internationalDestinations;
+
   return (
-    <section className="py-16 md:py-24">
+    <section id="destinations" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="Popular Destinations"
-          subtitle="Discover amazing places around the world"
+          label="Popular Destinations"
+          title={
+            <>
+              Explore <span className="text-primary">Amazing Places</span>
+            </>
+          }
+          description="From India's majestic heritage to exotic international getaways"
         />
+        <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab}  />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {destinations.map((destination, index) => (
-            <DestinationCard key={index} {...destination} />
+          {currentDestinations.map((destination, index) => (
+            <DestinationCard key={index} index={index} {...destination} />
           ))}
         </div>
         {showViewAll && (

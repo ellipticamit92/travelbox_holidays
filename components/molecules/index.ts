@@ -5,4 +5,5 @@ export { DestinationCard } from "./DestinationCard";
 export { PackageCard } from "./PackageCard";
 export { FeatureCard } from "./FeatureCard";
 export { StoryCard } from "./StoryCard";
+export { Tabs } from "./Tabs";
 
