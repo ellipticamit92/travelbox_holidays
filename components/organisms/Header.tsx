@@ -45,12 +45,11 @@ export function Header({
 
   return (
     <header
-    className={`fixed w-full z-50 transition-all duration-500 ${
+    className={`fixed w-full z-50 transition-all duration-500 md:top-10 ${
       isScrolled
-        ? "bg-card/95 backdrop-blur-md shadow-lg py-3"
+        ? "bg-card/95 backdrop-blur-md shadow-lg py-3 top-0!"
         : "bg-transparent py-4"
     }`}
-    style={{ top: isScrolled ? 0 : "35px" }}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
