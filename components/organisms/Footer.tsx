@@ -2,7 +2,16 @@ import { Logo } from "@/components/atoms/Logo";
 import { Navigation } from "@/components/molecules/Navigation";
 import { SocialLinks } from "@/components/molecules/SocialLinks";
 import { cn } from "@/lib/utils";
-import { Facebook, Instagram, Twitter, Linkedin, ArrowRight, MapPin, Phone, Mail } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Linkedin,
+  ArrowRight,
+  MapPin,
+  Phone,
+  Mail,
+} from "lucide-react";
 
 interface NavItem {
   href: string;
@@ -41,9 +50,7 @@ const defaultSections: FooterSection[] = [
   },
 ];
 
-export function Footer({
-  sections = defaultSections,
-}: FooterProps) {
+export function Footer({ sections = defaultSections }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -61,8 +68,8 @@ export function Footer({
               </span>
             </div>
             <p className="text-primary-foreground/70 mb-6">
-              Your trusted travel partner for customized India & international tours.
-              Creating unforgettable memories since 2014.
+              Your trusted travel partner for customized India & international
+              tours. Creating unforgettable memories since 2014.
             </p>
             <div className="flex gap-3">
               {[Facebook, Instagram, Twitter, Linkedin].map((Icon, index) => (
@@ -79,9 +86,18 @@ export function Footer({
 
           {/* India Destinations */}
           <div>
-            <h4 className="font-display text-lg font-bold mb-6">India Destinations</h4>
+            <h4 className="font-display text-lg font-bold mb-6">
+              India Destinations
+            </h4>
             <ul className="space-y-3">
-              {["Jaipur", "Kerala", "Ladakh", "Varanasi", "Goa", "Rajasthan"].map((dest) => (
+              {[
+                "Jaipur",
+                "Kerala",
+                "Ladakh",
+                "Varanasi",
+                "Goa",
+                "Rajasthan",
+              ].map((dest) => (
                 <li key={dest}>
                   <a
                     href="#destinations"
@@ -97,9 +113,44 @@ export function Footer({
 
           {/* International Destinations */}
           <div>
-            <h4 className="font-display text-lg font-bold mb-6">International</h4>
+            <h4 className="font-display text-lg font-bold mb-6">
+              International
+            </h4>
             <ul className="space-y-3">
-              {["Dubai", "Maldives", "Bali", "Singapore", "Thailand", "Malaysia"].map((dest) => (
+              {[
+                "FAQ",
+                "Privacy Policy",
+                "Term & Conditions",
+                "Help Center",
+                "Terms of Service",
+              ].map((dest) => (
+                <li key={dest}>
+                  <a
+                    href="#destinations"
+                    className="text-primary-foreground/70 hover:text-accent flex items-center gap-2 transition-colors group"
+                  >
+                    <ArrowRight className="h-4 w-4 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    {dest}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support and Legal */}
+          <div>
+            <h4 className="font-display text-lg font-bold mb-6">
+              International
+            </h4>
+            <ul className="space-y-3">
+              {[
+                "Dubai",
+                "Maldives",
+                "Bali",
+                "Singapore",
+                "Thailand",
+                "Malaysia",
+              ].map((dest) => (
                 <li key={dest}>
                   <a
                     href="#destinations"
@@ -125,13 +176,19 @@ export function Footer({
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
-                <a href="tel:+919876543210" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <a
+                  href="tel:+919876543210"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors"
+                >
                   +91 98765 43210
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
-                <a href="mailto:info@travelboxholidays.com" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <a
+                  href="mailto:info@travelboxholidays.com"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors"
+                >
                   info@travelboxholidays.com
                 </a>
               </li>
@@ -158,10 +215,17 @@ export function Footer({
         <div className="border-t border-primary-foreground/10">
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/60">
-              <p>© {currentYear} Travel Box Holidays Pvt. Ltd. All rights reserved.</p>
+              <p>
+                © {currentYear} Travel Box Holidays Pvt. Ltd. All rights
+                reserved.
+              </p>
               <div className="flex gap-6">
-                <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
+                <a href="#" className="hover:text-accent transition-colors">
+                  Privacy Policy
+                </a>
+                <a href="#" className="hover:text-accent transition-colors">
+                  Terms of Service
+                </a>
               </div>
             </div>
           </div>
@@ -170,4 +234,3 @@ export function Footer({
     </footer>
   );
 }
-
