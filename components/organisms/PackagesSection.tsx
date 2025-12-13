@@ -32,7 +32,7 @@ export function PackagesSection({
   return (
     <section className="bg-muted py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col items-start justify-between gap-4 md:flex-row mb-10 md:mb-0">
           <div className="flex-1">
             <SectionTitle
               label="Travel Packages"
@@ -43,11 +43,11 @@ export function PackagesSection({
               }
               description="Discover handpicked travel experiences designed for every type of traveler"
               align="left"
-              className="max-w-2xl mx-0"
+              className="max-w-2xl mx-0 mb-2 md:mb-12"
             />
           </div>
           {showViewAll && (
-            <div className="flex items-center pt-12">
+            <div className="flex items-center pt-0 md:pt-12">
               <Button asChild variant="outline" size="lg">
                 <Link href="/packages">
                   View All Packages <ArrowRight className="h-4 w-4 ml-2" />
