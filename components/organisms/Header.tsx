@@ -5,6 +5,8 @@ import { Navigation } from "@/components/molecules/Navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface NavItem {
   href: string;
@@ -20,8 +22,8 @@ interface HeaderProps {
 
 const defaultNavItems: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/destinations", label: "Destinations" },
-  { href: "/packages", label: "Packages" },
+  { href: "/#destinations", label: "Destinations" },
+  { href: "/#packages", label: "Packages" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -32,6 +34,9 @@ export function Header({
   ctaLabel = "Book Now",
   ctaHref = "/book",
 }: HeaderProps) {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/" || pathname === "/about";
+ 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -53,7 +58,7 @@ export function Header({
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <Logo size="md" isScrolled={isScrolled} />
+        <Logo size="md" isScrolled={isScrolled} isHomePage={isHomePage} />
 
         {/* Desktop Navigation */}
         <Navigation
@@ -61,6 +66,7 @@ export function Header({
           className="hidden md:flex"
           orientation="horizontal"
           isScrolled={isScrolled}
+          isHomePage={isHomePage}
         />
 
         {/* CTA Button & Mobile Menu Toggle */}
@@ -78,7 +84,10 @@ export function Header({
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className={cn(
+              "md:hidden",
+              !isHomePage && !isScrolled && "text-primary hover:text-secondary"
+            )}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -99,6 +108,7 @@ export function Header({
               items={navItems}
               orientation="vertical"
               className="mb-4"
+              isHomePage={isHomePage}
             />
             {showCTA && (
               <Button className="w-full" size="sm" asChild>

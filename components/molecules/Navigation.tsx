@@ -13,13 +13,15 @@ interface NavigationProps {
   className?: string;
   orientation?: "horizontal" | "vertical";
   isScrolled?: boolean;
+  isHomePage?: boolean;
 }
 
 export function Navigation({
   items,
   className,
   orientation = "horizontal",
-  isScrolled
+  isScrolled,
+  isHomePage = true
 }: NavigationProps) {
   return (
     <nav
@@ -30,7 +32,7 @@ export function Navigation({
       )}
     >
       {items.map((item) => (
-        <NavLink key={item.href} href={item.href} isScrolled={isScrolled}>
+        <NavLink key={item.href} href={item.href} isScrolled={isScrolled} isHomePage={isHomePage}>
           {item.label}
         </NavLink>
       ))}

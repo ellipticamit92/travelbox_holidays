@@ -7,34 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Globe, Landmark } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-
-interface Destination {
-  name: string;
-  image?: string;
-  href?: string;
-  subtitle?: string;
-  packages?: number;
-}
+import { getDestinationsByCategory } from "@/data/destinations";
 
 interface DestinationsSectionProps {
-  indianDestinations?: Destination[];
-  internationalDestinations?: Destination[];
   showViewAll?: boolean;
 }
-
-const defaultIndianDestinations: Destination[] = [
-  { name: "Jaipur", subtitle: "The Pink City", image: "/jaipur.jpeg", packages: 12 },
-  { name: "Kerala", subtitle: "God's Own Country", image: "/kerala.jpeg", packages: 15 },
-  { name: "Ladakh", subtitle: "Land of High Passes", image: "/ladakh.jpeg", packages: 8 },
-  { name: "Varanasi", subtitle: "The Spiritual Capital", image: "/varanasi.jpeg", packages: 10 },
-];
-
-const defaultInternationalDestinations: Destination[] = [
-  { name: "Dubai", subtitle: "City of Gold", image: "/dubai.jpeg", packages: 18 },
-  { name: "Maldives", subtitle: "Tropical Paradise", image: "/maldives.jpeg", packages: 12 },
-  { name: "Bali", subtitle: "Island of Gods", image: "/bali.jpeg", packages: 14 },
-  { name: "Singapore", subtitle: "Garden City", image: "/singapore.jpeg", packages: 10 },
-];
 
 const tabs = [
   { id: "indian", label: "Indian", icon: Landmark },
@@ -42,11 +19,12 @@ const tabs = [
 ];
 
 export function DestinationsSection({
-  indianDestinations = defaultIndianDestinations,
-  internationalDestinations = defaultInternationalDestinations,
   showViewAll = false,
 }: DestinationsSectionProps) {
   const [activeTab, setActiveTab] = useState("indian");
+
+  const indianDestinations = getDestinationsByCategory("india");
+  const internationalDestinations = getDestinationsByCategory("international");
 
   const currentDestinations =
     activeTab === "indian" ? indianDestinations : internationalDestinations;
@@ -66,7 +44,15 @@ export function DestinationsSection({
         <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab}  />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {currentDestinations.map((destination, index) => (
-            <DestinationCard key={index} index={index} {...destination} />
+            <DestinationCard
+              key={destination.id}
+              index={index}
+              name={destination.name}
+              subtitle={destination.subtitle}
+              image={destination.image}
+              href={`/destinations/${destination.id}`}
+              packages={12}
+            />
           ))}
         </div>
         {showViewAll && (

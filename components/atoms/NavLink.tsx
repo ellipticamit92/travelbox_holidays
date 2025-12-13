@@ -10,6 +10,7 @@ interface NavLinkProps {
   className?: string;
   activeClassName?: string;
   isScrolled?: boolean;
+  isHomePage?: boolean;
 }
 
 export function NavLink({
@@ -18,19 +19,32 @@ export function NavLink({
   className,
   activeClassName,
   isScrolled,
+  isHomePage = true,
 }: NavLinkProps) {
   const pathname = usePathname();
   const isActive = pathname === href;
+
+  // Determine text colors based on home page and scroll state
+  const getTextColor = () => {
+    if (isActive && isHomePage) return "text-secondary";
+    if (isActive) return activeClassName || "text-primary";
+    if (isScrolled) return "text-foreground";
+    if (!isHomePage) return "text-primary";
+    return "text-background";
+  };
+
+  const getHoverColor = () => {
+    if (!isHomePage && !isScrolled) return "hover:text-secondary";
+    return "hover:text-accent";
+  };
 
   return (
     <Link
       href={href}
       className={cn(
-        "text-sm font-medium transition-colors hover:text-accent",
-        isActive
-          ? activeClassName || "text-primary"
-          : "text-muted-foreground",
-        isScrolled ? "text-foreground" : "text-background",
+        "text-sm font-medium transition-colors",
+        getTextColor(),
+        getHoverColor(),
         className
       )}
     >

@@ -1,0 +1,61 @@
+import { MapPin, Phone, Mail } from "lucide-react";
+import { ContactHero } from "@/components/organisms/ContactHero";
+import { ContactInfoSection } from "@/components/organisms/ContactInfoSection";
+import { ContactForm } from "@/components/organisms/ContactForm";
+import { MapEmbed } from "@/components/molecules/MapEmbed";
+import { BusinessHoursCard } from "@/components/molecules/BusinessHoursCard";
+
+export default function ContactPage() {
+  const businessHours = [
+    { day: "Monday - Friday", hours: "9:00 AM - 7:00 PM" },
+    { day: "Saturday", hours: "10:00 AM - 5:00 PM" },
+    { day: "Sunday", hours: "11:00 AM - 4:00 PM" },
+  ];
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Visit Us",
+      details: ["123 Travel Plaza, MG Road", "Mumbai, Maharashtra 400001"],
+    },
+    {
+      icon: Phone,
+      title: "Call Us",
+      details: ["+91 98765 43210", "+91 22 2345 6789"],
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      details: ["info@travelboxholidays.com", "bookings@travelboxholidays.com"],
+    },
+  ];
+
+  const mapSrc =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.755203914991!2d72.83164131744384!3d19.021355987132746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ced7c9e2c4f3%3A0x9f70f7e0f4b9b8cd!2sMG%20Road%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1702900000000!5m2!1sen!2sin";
+
+  return (
+    <div className="min-h-screen bg-background">
+      <ContactHero />
+
+      <ContactInfoSection contactInfo={contactInfo} />
+
+      {/* Contact Form & Map Section */}
+      <section className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <ContactForm />
+
+            {/* Map & Business Hours */}
+            <div className="space-y-8">
+              <MapEmbed src={mapSrc} title="Office Location" />
+              <BusinessHoursCard
+                businessHours={businessHours}
+                footerText="* We're also available 24/7 for emergency travel assistance"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -1,7 +1,3 @@
-import { Logo } from "@/components/atoms/Logo";
-import { Navigation } from "@/components/molecules/Navigation";
-import { SocialLinks } from "@/components/molecules/SocialLinks";
-import { cn } from "@/lib/utils";
 import {
   Facebook,
   Instagram,
@@ -13,44 +9,8 @@ import {
   Mail,
 } from "lucide-react";
 
-interface NavItem {
-  href: string;
-  label: string;
-}
 
-interface FooterSection {
-  title: string;
-  links: NavItem[];
-}
-
-interface FooterProps {
-  navItems?: NavItem[];
-  sections?: FooterSection[];
-  showSocialLinks?: boolean;
-  copyrightText?: string;
-}
-
-const defaultSections: FooterSection[] = [
-  {
-    title: "Support",
-    links: [
-      { href: "/faq", label: "FAQ" },
-      { href: "/contact", label: "Contact" },
-      { href: "/help", label: "Help Center" },
-      { href: "/terms", label: "Terms of Service" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { href: "/privacy", label: "Privacy Policy" },
-      { href: "/terms", label: "Terms & Conditions" },
-      { href: "/cookies", label: "Cookie Policy" },
-    ],
-  },
-];
-
-export function Footer({ sections = defaultSections }: FooterProps) {
+export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -111,10 +71,10 @@ export function Footer({ sections = defaultSections }: FooterProps) {
             </ul>
           </div>
 
-          {/* International Destinations */}
+          {/* Support and Legal */}
           <div>
             <h4 className="font-display text-lg font-bold mb-6">
-              International
+              Support and Legal
             </h4>
             <ul className="space-y-3">
               {[
@@ -137,7 +97,7 @@ export function Footer({ sections = defaultSections }: FooterProps) {
             </ul>
           </div>
 
-          {/* Support and Legal */}
+          {/* International Destinations */}
           <div>
             <h4 className="font-display text-lg font-bold mb-6">
               International
@@ -197,20 +157,6 @@ export function Footer({ sections = defaultSections }: FooterProps) {
         </div>
       </div>
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Footer Sections */}
-          {sections.map((section) => (
-            <div key={section.title}>
-              <h3 className="mb-4 text-sm font-semibold">{section.title}</h3>
-              <Navigation
-                items={section.links}
-                orientation="vertical"
-                className="text-sm"
-              />
-            </div>
-          ))}
-        </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/10">
           <div className="container mx-auto px-4 py-6">
