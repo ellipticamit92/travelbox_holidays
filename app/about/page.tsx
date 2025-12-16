@@ -6,42 +6,109 @@ export default async function AboutPage() {
 
     const teamMembers = [
         {
-            name: "Rajesh Kumar",
-            role: "Founder & CEO",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-            bio: "20+ years of experience in the travel industry"
+          name: "Asish Kumar",
+          role: "Founder & Director",
+          image: "/teams/ashish-kumar.avif",
+          bio: "Visionary leader with 10+ years of experience in building and scaling successful travel businesses."
         },
         {
-            name: "Priya Sharma",
-            role: "Head of Operations",
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
-            bio: "Expert in curating luxury travel experiences"
+          name: "Raman Kumar",
+          role: "Co-Founder & Managing Director",
+          image: "/teams/raman.avif",
+          bio: "Oversees operations and strategy, ensuring seamless execution and sustainable business growth."
         },
         {
-            name: "Amit Verma",
-            role: "Senior Travel Consultant",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-            bio: "Specialized in international destinations"
+          name: "Sunny Kumar",
+          role: "CEO",
+          image: "/teams/sunny-kumar.avif",
+          bio: "Leads the organization with a strong focus on innovation, customer experience, and international expansion."
         },
         {
-            name: "Sneha Patel",
-            role: "Customer Relations Manager",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-            bio: "Dedicated to creating memorable journeys"
+          name: "Asha Mishra",
+          role: "Customer Relations Manager",
+          image: "/teams/asha-mishra.avif",
+          bio: "Manages customer relationships and support, ensuring high satisfaction at every stage of the journey."
         },
         {
-            name: "Vikram Singh",
-            role: "Adventure Travel Specialist",
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
-            bio: "Passionate about adventure and trekking tours"
+          name: "Sahid Rasool",
+          role: "Sales Head (Bihar & Jharkhand)",
+          image: "/teams/rasheed-rasol.avif",
+          bio: "Drives regional sales growth through strong market knowledge and customer-focused sales strategies."
         },
         {
-            name: "Anita Gupta",
-            role: "Marketing Director",
-            image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face",
-            bio: "Bringing travel dreams to life through storytelling"
-        }
-    ];
+          name: "Kumar Guddu",
+          role: "Marketing Partner",
+          image: "/teams/kumar-guddu.avif",
+          bio: "Supports brand growth through strategic marketing initiatives and promotional partnerships."
+        },
+        {
+          name: "Shiv Ranjan",
+          role: "Legal Advisor",
+          image: "/teams/shiv-ranjan.avif",
+          bio: "Provides legal guidance, compliance support, and risk management for all business operations."
+        },
+        {
+          name: "Bablu Kumar",
+          role: "Sales Executive",
+          image: "/teams/bablu-kumar.avif",
+          bio: "Handles client inquiries and bookings while delivering personalized travel solutions."
+        },
+        {
+          name: "Suraj Chandra",
+          role: "Business Coordinator",
+          image: "/teams/suraj-chandra.avif",
+          bio: "Coordinates between teams to ensure smooth business processes and timely service delivery."
+        },
+        {
+          name: "Mani Nagi",
+          role: "Package Head",
+          image: "/teams/mani-negi.avif",
+          bio: "Designs and manages travel packages, ensuring competitive pricing and high-quality experiences."
+        },
+        {
+          name: "Md. Naseer",
+          role: "Tour Planner",
+          image: "/teams/naseer.avif",
+          bio: "Creates detailed itineraries tailored to customer preferences and destination requirements."
+        },
+        {
+          name: "Ravi",
+          role: "Back Office",
+          image: "/teams/ravi.avif",
+          bio: "Manages documentation, data entry, and operational support for day-to-day business activities."
+        },
+        {
+          name: "Bipin Jha",
+          role: "Accountant",
+          image: "/teams/bipin-jha.avif",
+          bio: "Handles financial records, billing, and compliance to ensure accurate financial management."
+        },
+        {
+          name: "Ranjan Kuma",
+          role: "Team Leader",
+          image: "/teams/ranjan-kumar.avif",
+          bio: "Leads and motivates teams to achieve sales targets and maintain service excellence."
+        },
+        {
+          name: "Rahul Kumar",
+          role: "Sales Head Bangalore",
+          image: "/teams/rahul-kumar.avif",
+          bio: "Heads sales operations in Bangalore, driving revenue through strategic partnerships and client engagement."
+        },
+        {
+          name: "Bharat Choubey",
+          role: "Marketing Partner",
+          image: "/teams/bharat-choubey.avif",
+          bio: "Contributes to brand visibility and lead generation through targeted marketing campaigns."
+        },
+        {
+          name: "Ravi Ranjan Kumar",
+          role: "Tour Planner",
+          image: "/teams/ravi-ranjan-kumar.avif",
+          bio: "Specializes in planning customized tours with attention to detail and customer comfort."
+        },
+      ];
+      
 
     const stats = [
         { icon: Users, value: "50,000+", label: "Happy Travelers" },

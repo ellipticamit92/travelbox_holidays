@@ -25,6 +25,7 @@ const defaultNavItems: NavItem[] = [
   { href: "/#destinations", label: "Destinations" },
   { href: "/#packages", label: "Packages" },
   { href: "/about", label: "About" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
 

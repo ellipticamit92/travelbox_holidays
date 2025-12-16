@@ -3,9 +3,12 @@ import { DestinationsSection } from "@/components/organisms/DestinationsSection"
 import { PackagesSection } from "@/components/organisms/PackagesSection";
 import { WhyTravelWithUsSection } from "@/components/organisms/WhyTravelWithUsSection";
 import { TravelStoriesSection } from "@/components/organisms/TravelStoriesSection";
-import { Calendar, ChevronDown, MapPin, Users } from "lucide-react";
+import { Award, Calendar, ChevronDown, MapPin, Plane, Users } from "lucide-react";
 import ContactCTA from "@/components/organisms/ContactCTA";
 import ReviewSection from "@/components/organisms/ReviewsSection";
+import Image from "next/image";
+import PackageCategories from "@/components/organisms/PackageCategories";
+import Services from "@/components/organisms/Services";
 
 export default function Home() {
   return (
@@ -79,6 +82,34 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Partner Badges */}
+          <div className="mt-16 max-w-4xl mx-auto animate-fade-up animation-delay-400 text-center">
+            <p className="text-background text-sm font-medium mb-6 uppercase tracking-wider">
+              Trusted & Certified By
+            </p>
+
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              {[
+                { src: "/partner/ministryoftourism.jpeg", alt: "Ministry of Tourism" },
+                { src: "/partner/bihar-tourism-logo.jpg", alt: "Bihar Tourism" },
+                { src: "/partner/iata.avif", alt: "IATA" },
+              ].map((logo, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center w-36 h-36 md:w-40 md:h-40"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={140}
+                    height={140}
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
@@ -92,21 +123,17 @@ export default function Home() {
           </a>
         </div>
       </section>
-
       {/* Destinations Section */}
       <DestinationsSection />
-
+      <PackageCategories />
       {/* Packages Section */}
       <PackagesSection />
-
+      <Services />
       {/* Why Travel With Us Section */}
       <WhyTravelWithUsSection />
-
       {/* Travel Stories Section */}
       <TravelStoriesSection />
-
       <ReviewSection />
-
       {/* Contact CTA Section */}
       <ContactCTA />
     </>

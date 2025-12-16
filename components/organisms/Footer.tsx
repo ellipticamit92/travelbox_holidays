@@ -131,7 +131,8 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                 <span className="text-primary-foreground/70">
-                  Patna, Bihar, India
+                201-Suraj Complex, Exhibition Road
+                Patna, Bihar 800001
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -140,7 +141,7 @@ export function Footer() {
                   href="tel:+919876543210"
                   className="text-primary-foreground/70 hover:text-accent transition-colors"
                 >
-                  +91 98765 43210
+                  +91 96544 22590,  +91 76548 35326
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -149,7 +150,7 @@ export function Footer() {
                   href="mailto:info@travelboxholidays.com"
                   className="text-primary-foreground/70 hover:text-accent transition-colors"
                 >
-                  info@travelboxholidays.com
+                  packagetbh@gmail.com
                 </a>
               </li>
             </ul>
