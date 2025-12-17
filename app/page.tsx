@@ -51,7 +51,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Search Box  */}
+          {/* Search Box
           <div className="mt-16 max-w-5xl mx-auto animate-fade-up animation-delay-400">
             <div className="bg-card/95 backdrop-blur-md rounded-2xl shadow-2xl p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -82,6 +82,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          */}
 
           {/* Partner Badges */}
           <div className="mt-16 max-w-4xl mx-auto animate-fade-up animation-delay-400 text-center">
