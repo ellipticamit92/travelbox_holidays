@@ -11,6 +11,7 @@ export interface PackageData {
   image: string;
   featured: boolean;
   category: "india" | "international";
+  type: "religious" | "leisure" | "honeymoon" | "adventure" | "cultural";
   description: string;
   highlights: string[];
   inclusions: string[];
@@ -36,6 +37,7 @@ export const allPackages: PackageData[] = [
     image: "jaipur.jpeg",
     featured: true,
     category: "india",
+    type: "cultural",
     description: "Experience the magic of India's most iconic destinations. The Golden Triangle tour takes you through Delhi's vibrant streets, Agra's timeless Taj Mahal, and Jaipur's majestic palaces. This journey offers a perfect blend of history, culture, and architectural marvels.",
     highlights: [
       "Visit the iconic Taj Mahal at sunrise",
@@ -81,6 +83,7 @@ export const allPackages: PackageData[] = [
     image: "kerala.jpeg",
     featured: false,
     category: "india",
+    type: "leisure",
     description: "Discover God's Own Country with this enchanting Kerala tour. Cruise through serene backwaters, explore lush tea plantations, and experience the unique culture of South India.",
     highlights: [
       "Overnight stay in traditional houseboat",
@@ -123,6 +126,7 @@ export const allPackages: PackageData[] = [
     image: "/ladakh.jpeg",
     featured: false,
     category: "india",
+    type: "adventure",
     description: "Embark on an exhilarating adventure through the Land of High Passes. Experience the raw beauty of Ladakh with its stunning landscapes, ancient monasteries, and warm Ladakhi hospitality.",
     highlights: [
       "Visit stunning Pangong Lake",
@@ -167,6 +171,7 @@ export const allPackages: PackageData[] = [
     image: "dubai.jpeg",
     featured: true,
     category: "international",
+    type: "leisure",
     description: "Experience the glitz and glamour of the UAE with this exciting Dubai and Abu Dhabi tour. From towering skyscrapers to golden deserts, this trip offers the perfect blend of luxury and adventure.",
     highlights: [
       "Burj Khalifa observation deck visit",
@@ -211,6 +216,7 @@ export const allPackages: PackageData[] = [
     image: "maldives.jpeg",
     featured: false,
     category: "international",
+    type: "honeymoon",
     description: "Create unforgettable memories in paradise. This romantic Maldives getaway offers pristine beaches, crystal-clear waters, and world-class luxury for the perfect honeymoon experience.",
     highlights: [
       "Stay in overwater villa",
@@ -253,6 +259,7 @@ export const allPackages: PackageData[] = [
     image: "bali.jpeg",
     featured: false,
     category: "international",
+    type: "leisure",
     description: "Discover the Island of Gods with its stunning temples, terraced rice fields, and vibrant culture. From spiritual Ubud to beachside Seminyak, experience the best of Bali.",
     highlights: [
       "Ubud rice terrace walk",
@@ -292,4 +299,8 @@ export const getPackageById = (id: string): PackageData | undefined => {
 
 export const getPackagesByCategory = (category: "india" | "international"): PackageData[] => {
   return allPackages.filter((pkg) => pkg.category === category);
+};
+
+export const getPackagesByType = (type: "religious" | "leisure" | "honeymoon" | "adventure" | "cultural"): PackageData[] => {
+  return allPackages.filter((pkg) => pkg.type === type);
 };

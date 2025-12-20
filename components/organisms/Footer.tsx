@@ -47,16 +47,15 @@ export function Footer() {
           {/* India Destinations */}
           <div>
             <h4 className="font-display text-lg font-bold mb-6">
-              India Destinations
+              Popular Destinations
             </h4>
             <ul className="space-y-3">
               {[
-                "Jaipur",
                 "Kerala",
-                "Ladakh",
                 "Varanasi",
                 "Goa",
-                "Rajasthan",
+                "Thailand",
+                "Bali"
               ].map((dest) => (
                 <li key={dest}>
                   <a
@@ -74,7 +73,7 @@ export function Footer() {
           {/* Support and Legal */}
           <div>
             <h4 className="font-display text-lg font-bold mb-6">
-              Support and Legal
+              Support
             </h4>
             <ul className="space-y-3">
               {[
@@ -97,7 +96,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* International Destinations */}
+          {/* International Destinations
           <div>
             <h4 className="font-display text-lg font-bold mb-6">
               International
@@ -123,6 +122,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
+           */}
 
           {/* Contact Info */}
           <div>

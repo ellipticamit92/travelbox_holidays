@@ -11,4 +11,8 @@ export { PackageItinerary } from "./PackageItinerary";
 export { ContactHero } from "./ContactHero";
 export { ContactInfoSection } from "./ContactInfoSection";
 export { ContactForm } from "./ContactForm";
+export { GalleryHero } from "./GalleryHero";
+export { GalleryGrid } from "./GalleryGrid";
+export { PackagesHero } from "./PackagesHero";
+export { PackagesGrid } from "./PackagesGrid";
 

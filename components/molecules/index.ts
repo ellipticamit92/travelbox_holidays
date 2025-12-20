@@ -16,4 +16,8 @@ export { PackageBookingCard } from "./PackageBookingCard";
 export { ContactInfoCard } from "./ContactInfoCard";
 export { BusinessHoursCard } from "./BusinessHoursCard";
 export { MapEmbed } from "./MapEmbed";
+export { GalleryStats } from "./GalleryStats";
+export { GalleryCTA } from "./GalleryCTA";
+export { GalleryLightbox } from "./GalleryLightbox";
+export { PackageFilter } from "./PackageFilter";
 

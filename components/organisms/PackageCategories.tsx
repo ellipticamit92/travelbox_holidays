@@ -61,7 +61,7 @@ const PackageCategories = () => {
           {categories.map((category, index) => (
             <Link
               key={category.id}
-              href={`/packages?type=${category.id}`}
+              href={`/our-packages?type=${category.id}`}
               className="group relative overflow-hidden rounded-2xl bg-card border border-border p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -69,7 +69,6 @@ const PackageCategories = () => {
               <div className={`w-14 h-14 rounded-xl bg-linear-to-br ${category.color} flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110`}>
                 <category.icon className="h-7 w-7 text-white" />
               </div>
-              
               {/* Content */}
               <h3 className="font-display text-lg font-bold text-foreground mb-1">
                 {category.title}

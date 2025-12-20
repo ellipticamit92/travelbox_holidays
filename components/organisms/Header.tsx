@@ -23,8 +23,8 @@ interface HeaderProps {
 const defaultNavItems: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/#destinations", label: "Destinations" },
-  { href: "/#packages", label: "Packages" },
-  { href: "/about", label: "About" },
+  { href: "/our-packages", label: "Packages" },
+  { href: "/about-us", label: "About" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
@@ -36,7 +36,7 @@ export function Header({
   ctaHref = "/book",
 }: HeaderProps) {
   const pathname = usePathname();
-  const isHomePage = pathname === "/" || pathname === "/about";
+  const isHomePage = pathname === "/" || pathname === "/about-us";
  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
