@@ -5,100 +5,100 @@ import Link from "next/link";
 export default async function AboutPage() {
   const teamMembers = [
     {
+      name: "Asish Kumar",
+      role: "Founder & Director",
       image: "/teams/ashish-kumar.avif",
-      // name: "Asish Kumar",
-      // role: "Founder & Director",
-      // bio: "Visionary leader with 10+ years of experience in building and scaling successful travel businesses.",
+      bio: "Visionary leader with 10+ years of experience in building and scaling successful travel businesses.",
     },
     {
+      name: "Raman Kumar",
+      role: "Co-Founder & Managing Director",
       image: "/teams/raman.avif",
-      // name: "Raman Kumar",
-      // role: "Co-Founder & Managing Director",
-      // bio: "Oversees operations and strategy, ensuring seamless execution and sustainable business growth.",
+      bio: "Oversees operations and strategy, ensuring seamless execution and sustainable business growth.",
     },
     {
+      name: "Sunny Kumar",
+      role: "CEO",
       image: "/teams/sunny-kumar.avif",
-      // name: "Sunny Kumar",
-      // role: "CEO",
-      // bio: "Leads the organization with a strong focus on innovation, customer experience, and international expansion.",
+      bio: "Leads the organization with a strong focus on innovation, customer experience, and international expansion.",
     },
     {
+      name: "Asha Mishra",
+      role: "Customer Relations Manager",
       image: "/teams/asha-mishra.avif",
-      // name: "Asha Mishra",
-      // role: "Customer Relations Manager",
-      // bio: "Manages customer relationships and support, ensuring high satisfaction at every stage of the journey.",
+      bio: "Manages customer relationships and support, ensuring high satisfaction at every stage of the journey.",
     },
     {
+      name: "Sahid Rasool",
+      role: "Sales Head (Bihar & Jharkhand)",
       image: "/teams/rasheed-rasol.avif",
-      // name: "Sahid Rasool",
-      // role: "Sales Head (Bihar & Jharkhand)",
-      // bio: "Drives regional sales growth through strong market knowledge and customer-focused sales strategies.",
+      bio: "Drives regional sales growth through strong market knowledge and customer-focused sales strategies.",
     },
     {
+      name: "Kumar Guddu",
+      role: "Marketing Partner",
       image: "/teams/kumar-guddu.avif",
-      // name: "Kumar Guddu",
-      // role: "Marketing Partner",
-      // bio: "Supports brand growth through strategic marketing initiatives and promotional partnerships.",
+      bio: "Supports brand growth through strategic marketing initiatives and promotional partnerships.",
     },
     {
+      //name: "Shiv Ranjan",
+      role: "Legal Advisor",
       image: "/teams/shiv-ranjan.avif",
-      // name: "Shiv Ranjan",
-      // role: "Legal Advisor",
-      // bio: "Provides legal guidance, compliance support, and risk management for all business operations.",
+      bio: "Provides legal guidance, compliance support, and risk management for all business operations.",
     },
     {
+      //name: "Suraj Chandra",
+      role: "Business Coordinator",
       image: "/teams/suraj-chandra.avif",
-      // name: "Suraj Chandra",
-      // role: "Business Coordinator",
-      // bio: "Coordinates between teams to ensure smooth business processes and timely service delivery.",
+      bio: "Coordinates between teams to ensure smooth business processes and timely service delivery.",
     },
     {
+      //name: "Mani Nagi",
+      role: "Package Head",
       image: "/teams/mani-negi.avif",
-      // name: "Mani Nagi",
-      // role: "Package Head",
-      // bio: "Designs and manages travel packages, ensuring competitive pricing and high-quality experiences.",
+      bio: "Designs and manages travel packages, ensuring competitive pricing and high-quality experiences.",
     },
     {
+      //name: "Md. Naseer",
+      role: "Tour Planner",
       image: "/teams/naseer.avif",
-      // name: "Md. Naseer",
-      // role: "Tour Planner",
-      // bio: "Creates detailed itineraries tailored to customer preferences and destination requirements.",
+      bio: "Creates detailed itineraries tailored to customer preferences and destination requirements.",
     },
     {
+      //name: "Ravi",
+      role: "Back Office",
       image: "/teams/ravi.avif",
-      // name: "Ravi",
-      // role: "Back Office",
-      // bio: "Manages documentation, data entry, and operational support for day-to-day business activities.",
+      bio: "Manages documentation, data entry, and operational support for day-to-day business activities.",
     },
     {
+      //name: "Bipin Jha",
+      role: "Accountant",
       image: "/teams/bipin-jha.avif",
-      // name: "Bipin Jha",
-      // role: "Accountant",
-      // bio: "Handles financial records, billing, and compliance to ensure accurate financial management.",
+      bio: "Handles financial records, billing, and compliance to ensure accurate financial management.",
     },
     {
+      //name: "Ranjan Kuma",
+      role: "Team Leader",
       image: "/teams/ranjan-kumar.avif",
-      // name: "Ranjan Kuma",
-      // role: "Team Leader",
-      // bio: "Leads and motivates teams to achieve sales targets and maintain service excellence.",
+      bio: "Leads and motivates teams to achieve sales targets and maintain service excellence.",
     },
     {
+      //name: "Rahul Kumar",
+      role: "Sales Head Bangalore",
       image: "/teams/rahul-kumar.avif",
-      // name: "Rahul Kumar",
-      // role: "Sales Head Bangalore",
-      // bio: "Heads sales operations in Bangalore, driving revenue through strategic partnerships and client engagement.",
+      bio: "Heads sales operations in Bangalore, driving revenue through strategic partnerships and client engagement.",
     },
     {
+      //name: "Bharat Choubey",
+      role: "Marketing Partner",
       image: "/teams/bharat-choubey.avif",
-      // name: "Bharat Choubey",
-      // role: "Marketing Partner",
-      // bio: "Contributes to brand visibility and lead generation through targeted marketing campaigns.",
+      bio: "Contributes to brand visibility and lead generation through targeted marketing campaigns.",
     },
     {
+      //name: "Ravi Ranjan Kumar",
+      role: "Tour Planner",
       image: "/teams/ravi-ranjan-kumar.avif",
-      // name: "Ravi Ranjan Kumar",
-      // role: "Tour Planner",
-      // bio: "Specializes in planning customized tours with attention to detail and customer comfort.",
+      bio: "Specializes in planning customized tours with attention to detail and customer comfort.",
     },
   ];
 
@@ -158,7 +158,7 @@ export default async function AboutPage() {
                 Our Story
               </h2>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                Founded in 2009 in Patna, TravelBox Holidays began with a simple
+                Founded in 2019 in Patna, TravelBox Holidays began with a simple
                 vision: to make travel accessible, memorable, and hassle-free
                 for every Indian family. What started as a small travel desk has
                 now grown into one of Bihar's most trusted travel agencies.
@@ -221,17 +221,17 @@ export default async function AboutPage() {
                 <div className="aspect-square overflow-hidden">
                   <img
                     src={member.image}
-                    alt={"client-" + index}
+                    alt={member?.name ?? ""}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                {/* <div className="p-6 text-center">
+                <div className="p-6 text-center">
                   <h3 className="font-display text-xl font-bold text-foreground mb-1">
-                    {member?.name}
+                    {member.name}
                   </h3>
                   <p className="text-accent font-medium mb-2">{member.role}</p>
                   <p className="text-muted-foreground text-sm">{member.bio}</p>
-                </div> */}
+                </div>
               </div>
             ))}
           </div>
