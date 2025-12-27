@@ -1,4 +1,12 @@
 import {
+  ADDRESS,
+  EMAIL,
+  PHOME_NUMBER_HREF,
+  PHONE_NUMBER,
+  PHONE_NUMBER_ONE,
+  PHONE_NUMBER_ONE_HREF,
+} from "@/app/constants/constants";
+import {
   Facebook,
   Instagram,
   Twitter,
@@ -8,7 +16,6 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,7 +36,7 @@ export function Footer() {
             </div>
             <p className="text-primary-foreground/70 mb-6">
               Your trusted travel partner for customized India & international
-              tours. Creating unforgettable memories since 2014.
+              tours. Creating unforgettable memories since 2019.
             </p>
             <div className="flex gap-3">
               {[Facebook, Instagram, Twitter, Linkedin].map((Icon, index) => (
@@ -50,13 +57,7 @@ export function Footer() {
               Popular Destinations
             </h4>
             <ul className="space-y-3">
-              {[
-                "Kerala",
-                "Varanasi",
-                "Goa",
-                "Thailand",
-                "Bali"
-              ].map((dest) => (
+              {["Kerala", "Varanasi", "Goa", "Thailand", "Bali"].map((dest) => (
                 <li key={dest}>
                   <a
                     href="#destinations"
@@ -72,9 +73,7 @@ export function Footer() {
 
           {/* Support and Legal */}
           <div>
-            <h4 className="font-display text-lg font-bold mb-6">
-              Support
-            </h4>
+            <h4 className="font-display text-lg font-bold mb-6">Support</h4>
             <ul className="space-y-3">
               {[
                 "FAQ",
@@ -130,19 +129,27 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/70">
-                201-Suraj Complex, Exhibition Road
-                Patna, Bihar 800001
-                </span>
+                <span className="text-primary-foreground/70">{ADDRESS}</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent shrink-0" />
-                <a
-                  href="tel:+919876543210"
-                  className="text-primary-foreground/70 hover:text-accent transition-colors"
-                >
-                  +91 96544 22590,  +91 76548 35326
-                </a>
+              <li className="flex flex-col gap-2">
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-accent shrink-0" />
+                  <a
+                    href={PHOME_NUMBER_HREF}
+                    className="text-primary-foreground/70 hover:text-accent transition-colors"
+                  >
+                    {PHONE_NUMBER}
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-accent shrink-0" />
+                  <a
+                    href={PHONE_NUMBER_ONE_HREF}
+                    className="text-primary-foreground/70 hover:text-accent transition-colors"
+                  >
+                    {PHONE_NUMBER_ONE}
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
@@ -150,7 +157,7 @@ export function Footer() {
                   href="mailto:info@travelboxholidays.com"
                   className="text-primary-foreground/70 hover:text-accent transition-colors"
                 >
-                  packagetbh@gmail.com
+                  {EMAIL}
                 </a>
               </li>
             </ul>

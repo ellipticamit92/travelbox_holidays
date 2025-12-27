@@ -4,6 +4,7 @@ import { ContactInfoSection } from "@/components/organisms/ContactInfoSection";
 import { ContactForm } from "@/components/organisms/ContactForm";
 import { MapEmbed } from "@/components/molecules/MapEmbed";
 import { BusinessHoursCard } from "@/components/molecules/BusinessHoursCard";
+import { EMAIL, PHONE_NUMBER, PHONE_NUMBER_ONE } from "../constants/constants";
 
 export default function ContactPage() {
   const businessHours = [
@@ -15,17 +16,20 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["123 Travel Plaza, MG Road", "Mumbai, Maharashtra 400001"],
+      details: [
+        "Flat no. 201 on 2nd floor in suraj complex,sahayogi press marg, Exhibition Rd, near Domino's pizza",
+        "Patna, Bihar 800001",
+      ],
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 22 2345 6789"],
+      details: [PHONE_NUMBER, PHONE_NUMBER_ONE],
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@travelboxholidays.com", "bookings@travelboxholidays.com"],
+      details: [EMAIL],
     },
   ];
 

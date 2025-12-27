@@ -1,5 +1,6 @@
 "use client";
 
+import { EMAIL, PHONE_NUMBER } from "@/app/constants/constants";
 import { Phone, Mail } from "lucide-react";
 
 interface TopBarProps {
@@ -8,13 +9,12 @@ interface TopBarProps {
   className?: string;
 }
 
-export function TopBar({
-  phone = "+91 98765 43210",
-  email = "info@travelboxholidays.com",
-}: TopBarProps) {
-
+export function TopBar({ phone = PHONE_NUMBER, email = EMAIL }: TopBarProps) {
   return (
-    <div className="hidden md:block bg-primary text-primary-foreground py-2" aria-hidden="true">
+    <div
+      className="hidden md:block bg-primary text-primary-foreground py-2"
+      aria-hidden="true"
+    >
       <div className="container mx-auto px-4 flex justify-between items-center text-sm">
         <div className="flex items-center gap-6">
           <a
@@ -41,7 +41,5 @@ export function TopBar({
         </div>
       </div>
     </div>
-
   );
 }
-

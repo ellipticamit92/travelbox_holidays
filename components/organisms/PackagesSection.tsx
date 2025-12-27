@@ -18,9 +18,7 @@ const tabs = [
   { id: "international", label: "International Tours", icon: Globe },
 ];
 
-export function PackagesSection({
-  showViewAll = true,
-}: PackagesSectionProps) {
+export function PackagesSection({ showViewAll = true }: PackagesSectionProps) {
   const [activeTab, setActiveTab] = useState("indian");
 
   const indianPackages = getPackagesByCategory("india");
@@ -38,7 +36,8 @@ export function PackagesSection({
               label="Travel Packages"
               title={
                 <>
-                  Carefully Curated <span className="text-primary">Holiday Packages</span>
+                  Carefully Curated{" "}
+                  <span className="text-primary">Holiday Packages</span>
                 </>
               }
               description="Discover handpicked travel experiences designed for every type of traveler"
@@ -49,7 +48,7 @@ export function PackagesSection({
           {showViewAll && (
             <div className="flex items-center pt-0 md:pt-12">
               <Button asChild variant="outline" size="lg">
-                <Link href="/packages">
+                <Link href="/our-packages">
                   View All Packages <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>
               </Button>
@@ -86,4 +85,3 @@ export function PackagesSection({
     </section>
   );
 }
-
