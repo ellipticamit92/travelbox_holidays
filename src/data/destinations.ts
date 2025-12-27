@@ -9,7 +9,7 @@ export interface DestinationData {
   bestTimeToVisit: string;
   currency?: string;
   language?: string;
-  packages?: number
+  packages?: number;
 }
 
 export const allDestinations: DestinationData[] = [
@@ -19,13 +19,14 @@ export const allDestinations: DestinationData[] = [
     subtitle: "The Pink City",
     image: "/jaipur.jpeg",
     category: "india",
-    description: "Jaipur, the vibrant capital of Rajasthan, is a captivating blend of royal heritage, stunning architecture, and colorful culture. Known as the 'Pink City' for its iconic terracotta-pink buildings, it forms part of India's famous Golden Triangle.",
+    description:
+      "Jaipur, the vibrant capital of Rajasthan, is a captivating blend of royal heritage, stunning architecture, and colorful culture. Known as the 'Pink City' for its iconic terracotta-pink buildings, it forms part of India's famous Golden Triangle.",
     highlights: [
       "Majestic Amber Fort with elephant rides",
       "Stunning Hawa Mahal (Palace of Winds)",
       "City Palace and royal heritage",
       "Colorful bazaars and handicrafts",
-      "Traditional Rajasthani cuisine"
+      "Traditional Rajasthani cuisine",
     ],
     bestTimeToVisit: "October to March",
     language: "Hindi, Rajasthani",
@@ -37,13 +38,14 @@ export const allDestinations: DestinationData[] = [
     subtitle: "God's Own Country",
     image: "/kerala.jpeg",
     category: "india",
-    description: "Kerala, nestled on India's southwestern coast, is a tropical paradise of serene backwaters, lush hill stations, and pristine beaches. Known as 'God's Own Country', it offers a unique blend of natural beauty and rich cultural heritage.",
+    description:
+      "Kerala, nestled on India's southwestern coast, is a tropical paradise of serene backwaters, lush hill stations, and pristine beaches. Known as 'God's Own Country', it offers a unique blend of natural beauty and rich cultural heritage.",
     highlights: [
       "Serene backwater houseboat cruises",
       "Lush tea plantations of Munnar",
       "Ayurvedic wellness treatments",
       "Beautiful beaches of Kovalam",
-      "Wildlife at Periyar National Park"
+      "Wildlife at Periyar National Park",
     ],
     bestTimeToVisit: "September to March",
     language: "Malayalam",
@@ -55,13 +57,14 @@ export const allDestinations: DestinationData[] = [
     subtitle: "Land of High Passes",
     image: "/ladakh.jpeg",
     category: "india",
-    description: "Ladakh, the 'Land of High Passes', is a breathtaking high-altitude desert offering dramatic landscapes, ancient monasteries, and adventure at every turn. This remote Himalayan region provides an otherworldly experience.",
+    description:
+      "Ladakh, the 'Land of High Passes', is a breathtaking high-altitude desert offering dramatic landscapes, ancient monasteries, and adventure at every turn. This remote Himalayan region provides an otherworldly experience.",
     highlights: [
       "Stunning Pangong Lake",
       "Ancient Buddhist monasteries",
       "Thrilling mountain passes",
       "Nubra Valley sand dunes",
-      "Unique Ladakhi culture"
+      "Unique Ladakhi culture",
     ],
     bestTimeToVisit: "May to September",
     language: "Ladakhi, Hindi",
@@ -73,17 +76,37 @@ export const allDestinations: DestinationData[] = [
     subtitle: "The Spiritual Capital",
     image: "/varanasi.jpeg",
     category: "india",
-    description: "Varanasi, one of the world's oldest living cities, is India's spiritual heart. Situated on the banks of the sacred Ganges, this ancient city offers a profound glimpse into Hindu traditions, rituals, and the cycle of life.",
+    description:
+      "Varanasi, one of the world's oldest living cities, is India's spiritual heart. Situated on the banks of the sacred Ganges, this ancient city offers a profound glimpse into Hindu traditions, rituals, and the cycle of life.",
     highlights: [
       "Evening Ganga Aarti ceremony",
       "Sunrise boat ride on Ganges",
       "Ancient ghats and temples",
       "Sarnath Buddhist site",
-      "Traditional silk weaving"
+      "Traditional silk weaving",
     ],
     bestTimeToVisit: "October to March",
     language: "Hindi, Bhojpuri",
     packages: 5,
+  },
+  {
+    id: "europe",
+    name: "Europe",
+    subtitle: "Timeless Elegance",
+    image: "/europe.jpg",
+    category: "international",
+    description:
+      "Europe offers an unparalleled blend of history, art, and diverse cultures across its stunning nations. From the romantic streets of Paris to the alpine beauty of Switzerland, Europe promises unforgettable experiences.",
+    highlights: [
+      "Iconic Eiffel Tower in Paris",
+      "Historic Colosseum in Rome",
+      "Swiss Alps scenic beauty",
+      "Amsterdam's charming canals",
+      "Mediterranean coastal gems",
+    ],
+    bestTimeToVisit: "April to October",
+    currency: "Euro (EUR)",
+    language: "English, French, German, Italian",
   },
   {
     id: "dubai",
@@ -91,80 +114,67 @@ export const allDestinations: DestinationData[] = [
     subtitle: "City of Gold",
     image: "/dubai.jpeg",
     category: "international",
-    description: "Dubai is a dazzling metropolis that seamlessly blends ultramodern architecture with traditional Arabian culture. From the world's tallest building to golden desert adventures, Dubai offers an unparalleled luxury experience.",
+    description:
+      "Dubai is a dazzling metropolis that seamlessly blends ultramodern architecture with traditional Arabian culture. From the world's tallest building to golden desert adventures, Dubai offers an unparalleled luxury experience.",
     highlights: [
       "Iconic Burj Khalifa observation",
       "Desert safari with BBQ dinner",
       "World-class shopping malls",
       "Palm Jumeirah and beaches",
-      "Traditional souks and culture"
+      "Traditional souks and culture",
     ],
     bestTimeToVisit: "November to March",
     currency: "UAE Dirham (AED)",
-    language: "Arabic, English"
+    language: "Arabic, English",
   },
   {
-    id: "maldives",
-    name: "Maldives",
-    subtitle: "Tropical Paradise",
-    image: "/maldives.jpeg",
+    id: "thailand",
+    name: "Thailand",
+    subtitle: "Land of Smiles",
+    image: "/thailand.jpg",
     category: "international",
-    description: "The Maldives is a tropical paradise of pristine white beaches, crystal-clear turquoise waters, and luxurious overwater villas. This island nation offers the ultimate romantic escape and world-class diving experiences.",
+    description:
+      "Thailand, the 'Land of Smiles', captivates visitors with its golden temples, tropical beaches, and vibrant street life. From bustling Bangkok to serene islands, Thailand offers an exotic blend of culture, cuisine, and natural beauty.",
     highlights: [
-      "Overwater villa experience",
-      "World-class snorkeling & diving",
-      "Pristine white sand beaches",
-      "Sunset dolphin cruises",
-      "Underwater restaurants"
+      "Magnificent Grand Palace Bangkok",
+      "Stunning Phi Phi Islands",
+      "Ancient temples of Chiang Mai",
+      "World-famous Thai cuisine",
+      "Floating markets experience",
     ],
-    bestTimeToVisit: "November to April",
-    currency: "Maldivian Rufiyaa (MVR)",
-    language: "Dhivehi, English"
+    bestTimeToVisit: "November to February",
+    currency: "Thai Baht (THB)",
+    language: "Thai, English",
   },
-  {
-    id: "bali",
-    name: "Bali",
-    subtitle: "Island of Gods",
-    image: "/bali.jpeg",
-    category: "international",
-    description: "Bali, the 'Island of Gods', enchants visitors with its dramatic landscapes, ancient temples, and vibrant arts scene. From spiritual Ubud to beach-side Seminyak, Bali offers a perfect blend of culture, nature, and relaxation.",
-    highlights: [
-      "Iconic rice terraces of Tegallalang",
-      "Sacred Tanah Lot temple",
-      "Ubud arts and crafts scene",
-      "Beautiful beach clubs",
-      "Traditional Balinese spa"
-    ],
-    bestTimeToVisit: "April to October",
-    currency: "Indonesian Rupiah (IDR)",
-    language: "Indonesian, Balinese",
-    packages: 4,
-  },
+
   {
     id: "singapore",
-    name: "Singapore",
+    name: "Singapore & Malaysia",
     subtitle: "Garden City",
     image: "/singapore.jpeg",
     category: "international",
-    description: "Singapore is a dynamic city-state where futuristic architecture meets lush tropical gardens. Known for its cleanliness, efficiency, and diverse food scene, Singapore offers a perfect mix of urban excitement and natural beauty.",
+    description:
+      "Singapore is a dynamic city-state where futuristic architecture meets lush tropical gardens. Known for its cleanliness, efficiency, and diverse food scene, Singapore offers a perfect mix of urban excitement and natural beauty.",
     highlights: [
       "Futuristic Gardens by the Bay",
       "Marina Bay Sands skypark",
       "Sentosa Island attractions",
       "World-famous hawker food",
-      "Orchard Road shopping"
+      "Orchard Road shopping",
     ],
     bestTimeToVisit: "February to April",
     currency: "Singapore Dollar (SGD)",
     language: "English, Mandarin, Malay, Tamil",
     packages: 4,
-  }
+  },
 ];
 
 export const getDestinationById = (id: string): DestinationData | undefined => {
   return allDestinations.find((dest) => dest.id === id);
 };
 
-export const getDestinationsByCategory = (category: "india" | "international"): DestinationData[] => {
+export const getDestinationsByCategory = (
+  category: "india" | "international"
+): DestinationData[] => {
   return allDestinations.filter((dest) => dest.category === category);
 };

@@ -8,8 +8,11 @@ interface TopBarProps {
   email?: string;
   className?: string;
 }
-
-export function TopBar({ phone = PHONE_NUMBER, email = EMAIL }: TopBarProps) {
+("");
+export function TopBar({
+  phone = "+91 96544 22590",
+  email = EMAIL,
+}: TopBarProps) {
   return (
     <div
       className="hidden md:block bg-primary text-primary-foreground py-2"
