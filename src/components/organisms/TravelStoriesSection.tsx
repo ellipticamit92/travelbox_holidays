@@ -16,56 +16,55 @@ interface TravelStoriesSectionProps {
   showViewAll?: boolean;
 }
 
-
 const defaultStories: Story[] = [
   {
     id: 1,
     image: "/clients/client-2.avif",
-    name: "The Sharma Family",
-    location: "Taj Mahal, Agra",
-    trip: "Golden Triangle Tour",
+    // name: "The Sharma Family",
+    // location: "Taj Mahal, Agra",
+    // trip: "Golden Triangle Tour",
   },
   {
     id: 2,
     image: "/clients/client-3.avif",
-    name: "Amit & Priya",
-    location: "Maldives",
-    trip: "Honeymoon Package",
+    // name: "Amit & Priya",
+    // location: "Maldives",
+    // trip: "Honeymoon Package",
   },
   {
     id: 3,
     image: "/clients/client-9.jpg",
-    name: "College Friends",
-    location: "Phuket Karabi, Thailand",
-    trip: "Thailand Dazzle Tour",
+    // name: "College Friends",
+    // location: "Phuket Karabi, Thailand",
+    // trip: "Thailand Dazzle Tour",
   },
   {
     id: 4,
     image: "/clients/client-10.jpg",
-    name: "The Gupta Family",
-    location: "Kerala Backwaters",
-    trip: "Kerala Escape",
+    // name: "The Gupta Family",
+    // location: "Kerala Backwaters",
+    // trip: "Kerala Escape",
   },
   {
     id: 5,
     image: "/clients/client-7.avif",
-    name: "Meera Singh",
-    location: "Ubud, Bali",
-    trip: "Bali Paradise Tour",
+    // name: "Meera Singh",
+    // location: "Ubud, Bali",
+    // trip: "Bali Paradise Tour",
   },
   {
     id: 6,
     image: "/clients/client-6.avif",
-    name: "Mr. & Mrs. Kapoor",
-    location: "Jaisalmer, Rajasthan",
-    trip: "Rajasthan Heritage",
+    // name: "Mr. & Mrs. Kapoor",
+    // location: "Jaisalmer, Rajasthan",
+    // trip: "Rajasthan Heritage",
   },
   {
     id: 7,
     image: "/clients/client-5.avif",
-    name: "Mr. & Mrs. Kapoor",
-    location: "Jaisalmer, Rajasthan",
-    trip: "Rajasthan Heritage",
+    // name: "Mr. & Mrs. Kapoor",
+    // location: "Jaisalmer, Rajasthan",
+    // trip: "Rajasthan Heritage",
   },
 ];
 
@@ -110,4 +109,3 @@ export function TravelStoriesSection({
     </section>
   );
 }
-

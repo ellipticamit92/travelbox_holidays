@@ -15,14 +15,15 @@ export function StoryCard({
   location,
   image,
   trip,
-  index = 0
+  index = 0,
 }: StoryCardProps) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl cursor-pointer animate-fade-up ${index === 0 || index === 3 ? "row-span-2" : ""
-        }`}
+      className={`group relative overflow-hidden rounded-2xl cursor-pointer animate-fade-up ${
+        index === 0 || index === 3 ? "row-span-2" : ""
+      }`}
       style={{ animationDelay: `${index * 100}ms` }}
-    //onClick={() => setSelectedImage(item)}
+      //onClick={() => setSelectedImage(item)}
     >
       <img
         src={image}
@@ -37,8 +38,12 @@ export function StoryCard({
       {/* Content */}
       <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <div className="flex items-center gap-2 text-accent text-sm mb-1">
-          <MapPin className="h-4 w-4" />
-          <span>{location}</span>
+          {location && (
+            <>
+              <MapPin className="h-4 w-4" />
+              <span>{location}</span>
+            </>
+          )}
         </div>
         <p className="text-background font-semibold">{name}</p>
         <p className="text-background/70 text-sm">{trip}</p>
@@ -51,4 +56,3 @@ export function StoryCard({
     </div>
   );
 }
-

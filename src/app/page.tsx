@@ -3,10 +3,9 @@ import { DestinationsSection } from "@/components/organisms/DestinationsSection"
 import { PackagesSection } from "@/components/organisms/PackagesSection";
 import { WhyTravelWithUsSection } from "@/components/organisms/WhyTravelWithUsSection";
 import { TravelStoriesSection } from "@/components/organisms/TravelStoriesSection";
-import { Award, Calendar, ChevronDown, MapPin, Plane, Users } from "lucide-react";
+import { Award, ChevronDown, MapPin, Plane } from "lucide-react";
 import ContactCTA from "@/components/organisms/ContactCTA";
 import ReviewSection from "@/components/organisms/ReviewsSection";
-import Image from "next/image";
 import PackageCategories from "@/components/organisms/PackageCategories";
 import Services from "@/components/organisms/Services";
 
@@ -84,31 +83,38 @@ export default function Home() {
           </div>
           */}
 
-            {/* Partner Badges */}
-        <div className="mt-16 max-w-4xl mx-auto animate-fade-up animation-delay-400">
-          <p className="text-background/70 text-sm font-medium mb-6 uppercase tracking-wider text-center">Trusted Partner Of</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            <div className="flex flex-col items-center gap-2 group">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-background/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-background/20 group-hover:bg-background/20 transition-all duration-300">
-                <MapPin className="h-8 w-8 md:h-10 md:w-10 text-accent" />
+          {/* Partner Badges */}
+          <div className="mt-16 max-w-4xl mx-auto animate-fade-up animation-delay-400">
+            <p className="text-background/70 text-sm font-medium mb-6 uppercase tracking-wider text-center">
+              Trusted Partner Of
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              <div className="flex flex-col items-center gap-2 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-background/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-background/20 group-hover:bg-background/20 transition-all duration-300">
+                  <MapPin className="h-8 w-8 md:h-10 md:w-10 text-accent" />
+                </div>
+                <span className="text-background text-sm font-bold">
+                  Bihar Tourism
+                </span>
               </div>
-              <span className="text-background text-sm font-bold">Bihar Tourism</span>
-            </div>
-            <div className="flex flex-col items-center gap-2 group">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-background/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-background/20 group-hover:bg-background/20 transition-all duration-300">
-                <Award className="h-8 w-8 md:h-10 md:w-10 text-accent" />
+              <div className="flex flex-col items-center gap-2 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-background/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-background/20 group-hover:bg-background/20 transition-all duration-300">
+                  <Award className="h-8 w-8 md:h-10 md:w-10 text-accent" />
+                </div>
+                <span className="text-background text-sm font-bold">
+                  Ministry of Tourism
+                </span>
               </div>
-              <span className="text-background text-sm font-bold">Ministry of Tourism</span>
-            </div>
-            <div className="flex flex-col items-center gap-2 group">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-background/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-background/20 group-hover:bg-background/20 transition-all duration-300">
-                <Plane className="h-8 w-8 md:h-10 md:w-10 text-accent" />
+              <div className="flex flex-col items-center gap-2 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-background/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-background/20 group-hover:bg-background/20 transition-all duration-300">
+                  <Plane className="h-8 w-8 md:h-10 md:w-10 text-accent" />
+                </div>
+                <span className="text-background text-sm font-bold">
+                  IATA Certified
+                </span>
               </div>
-              <span className="text-background text-sm font-bold">IATA Certified</span>
             </div>
           </div>
-        </div>
-
         </div>
 
         {/* Scroll Indicator */}
