@@ -1,6 +1,6 @@
 "use client";
 
-import { EMAIL, PHONE_NUMBER } from "@/app/constants/constants";
+import { EMAIL, PHONE_NUMBER_TWO } from "@/app/constants/constants";
 import { Phone, Mail } from "lucide-react";
 
 interface TopBarProps {
@@ -10,7 +10,7 @@ interface TopBarProps {
 }
 ("");
 export function TopBar({
-  phone = "+91 96544 22590",
+  phone = {PHONE_NUMBER_TWO},
   email = EMAIL,
 }: TopBarProps) {
   return (
