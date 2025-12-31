@@ -10,7 +10,7 @@ interface TopBarProps {
 }
 ("");
 export function TopBar({
-  phone = {PHONE_NUMBER_TWO},
+  phone = PHONE_NUMBER_TWO,
   email = EMAIL,
 }: TopBarProps) {
   return (
