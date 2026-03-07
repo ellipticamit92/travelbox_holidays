@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { DestinationsSection } from "@/components/organisms/DestinationsSection";
 import { PackagesSection } from "@/components/organisms/PackagesSection";
@@ -89,29 +90,32 @@ export default function Home() {
               Trusted Partner Of
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              <div className="flex flex-col items-center gap-2 group">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-background/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-background/20 group-hover:bg-background/20 transition-all duration-300">
-                  <MapPin className="h-8 w-8 md:h-10 md:w-10 text-accent" />
-                </div>
-                <span className="text-background text-sm font-bold">
-                  Bihar Tourism
-                </span>
+              <div className="bg-background rounded-sm">
+                <Image
+                  src="/partner/bihar_tourism_logo.webp"
+                  alt="Bihar Tourism Logo"
+                  width={300}
+                  height={300}
+                  className="object-contain"
+                />
               </div>
-              <div className="flex flex-col items-center gap-2 group">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-background/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-background/20 group-hover:bg-background/20 transition-all duration-300">
-                  <Award className="h-8 w-8 md:h-10 md:w-10 text-accent" />
-                </div>
-                <span className="text-background text-sm font-bold">
-                  Ministry of Tourism
-                </span>
+              <div className="bg-background rounded-sm px-4 py-2">
+                <Image
+                  src="/partner/ministry_of_tourism_india.svg"
+                  alt="Bihar Tourism Logo"
+                  width={280}
+                  height={280}
+                  className="object-contain"
+                />
               </div>
-              <div className="flex flex-col items-center gap-2 group">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-background/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-background/20 group-hover:bg-background/20 transition-all duration-300">
-                  <Plane className="h-8 w-8 md:h-10 md:w-10 text-accent" />
-                </div>
-                <span className="text-background text-sm font-bold">
-                  IATA Certified
-                </span>
+              <div className="bg-background rounded-sm px-6">
+                <Image
+                  src="/partner/iata_logo.svg"
+                  alt="Bihar Tourism Logo"
+                  width={145}
+                  height={145}
+                  className="object-contain"
+                />
               </div>
             </div>
           </div>
