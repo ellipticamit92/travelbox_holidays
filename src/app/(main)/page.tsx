@@ -12,18 +12,29 @@ import ReviewSection from "@/components/organisms/ReviewsSection";
 import PackageCategories from "@/components/organisms/PackageCategories";
 import Services from "@/components/organisms/Services";
 import { prisma } from "@/lib/prisma";
+import { allDestinations } from "@/data/destinations";
+import { allPackages } from "@/data/packages";
 
 export default async function Home() {
-  const [destinations, packages] = await Promise.all([
-    prisma.destination.findMany({
-      select: { id: true, slug: true, name: true, subtitle: true, image: true, category: true, packages: true },
-      orderBy: { createdAt: "asc" },
-    }),
-    prisma.package.findMany({
-      select: { id: true, slug: true, title: true, destination: true, duration: true, groupSize: true, price: true, originalPrice: true, rating: true, reviews: true, image: true, featured: true, category: true },
-      orderBy: { createdAt: "asc" },
-    }),
-  ]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let destinations: any[] = allDestinations;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let packages: any[] = allPackages;
+
+  try {
+    [destinations, packages] = await Promise.all([
+      prisma.destination.findMany({
+        select: { id: true, slug: true, name: true, subtitle: true, image: true, category: true, packages: true },
+        orderBy: { createdAt: "asc" },
+      }),
+      prisma.package.findMany({
+        select: { id: true, slug: true, title: true, destination: true, duration: true, groupSize: true, price: true, originalPrice: true, rating: true, reviews: true, image: true, featured: true, category: true },
+        orderBy: { createdAt: "asc" },
+      }),
+    ]);
+  } catch {
+    // DB unreachable (e.g. during Vercel build) — fall back to static data
+  }
 
   const indianDestinations = destinations.filter((d) => d.category === "india");
   const internationalDestinations = destinations.filter((d) => d.category === "international");

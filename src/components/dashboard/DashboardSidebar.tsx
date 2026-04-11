@@ -12,6 +12,7 @@ import {
   Package,
   Info,
   Phone,
+  MessageSquare,
 } from "lucide-react";
 import {
   Sidebar,
@@ -32,6 +33,7 @@ const navItems = [
   { label: "Destinations", href: "/dashboard/destinations", icon: MapPin },
   { label: "Packages",     href: "/dashboard/packages",     icon: Package },
   { label: "Gallery",      href: "/dashboard/gallery",      icon: Images },
+  { label: "Inquiries",   href: "/dashboard/inquiries",    icon: MessageSquare },
 ];
 
 const siteLinks = [
