@@ -7,9 +7,20 @@ import { Button } from "@/components/ui/button";
 import { Globe, Landmark } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { getDestinationsByCategory } from "@/data/destinations";
+
+export interface DestinationItem {
+  id: string;
+  slug: string;
+  name: string;
+  subtitle: string;
+  image: string | null;
+  category: string;
+  packages: number;
+}
 
 interface DestinationsSectionProps {
+  indianDestinations: DestinationItem[];
+  internationalDestinations: DestinationItem[];
   showViewAll?: boolean;
 }
 
@@ -19,12 +30,11 @@ const tabs = [
 ];
 
 export function DestinationsSection({
+  indianDestinations,
+  internationalDestinations,
   showViewAll = false,
 }: DestinationsSectionProps) {
   const [activeTab, setActiveTab] = useState("indian");
-
-  const indianDestinations = getDestinationsByCategory("india");
-  const internationalDestinations = getDestinationsByCategory("international");
 
   const currentDestinations =
     activeTab === "indian" ? indianDestinations : internationalDestinations;
@@ -49,9 +59,9 @@ export function DestinationsSection({
               index={index}
               name={destination.name}
               subtitle={destination.subtitle}
-              image={destination.image}
-              href={`/destinations/${destination.id}`}
-              packages={12}
+              image={destination.image ?? undefined}
+              href={`/destinations/${destination.slug}`}
+              packages={destination.packages}
             />
           ))}
         </div>

@@ -56,6 +56,92 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+model Destination {
+  id             String                 @id @default(cuid())
+  slug           String                 @unique
+  name           String
+  subtitle       String
+  image          String?
+  category       String
+  description    String                 @db.Text
+  bestTimeToVisit String
+  currency       String?
+  language       String?
+  packages       Int                    @default(0)
+  createdAt      DateTime               @default(now())
+  updatedAt      DateTime               @updatedAt
+
+  highlights     DestinationHighlight[]
+}
+
+model DestinationHighlight {
+  id            String      @id @default(cuid())
+  text          String
+  order         Int         @default(0)
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+}
+
+model Package {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  title         String
+  destination   String
+  duration      String
+  groupSize     String
+  price         String
+  originalPrice String?
+  rating        Float    @default(0)
+  reviews       Int      @default(0)
+  image         String?
+  featured      Boolean  @default(false)
+  category      String
+  type          String
+  description   String   @db.Text
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  highlights  PackageHighlight[]
+  inclusions  PackageInclusion[]
+  exclusions  PackageExclusion[]
+  itinerary   PackageItinerary[]
+}
+
+model PackageHighlight {
+  id        String  @id @default(cuid())
+  text      String
+  order     Int     @default(0)
+  packageId String
+  package   Package @relation(fields: [packageId], references: [id], onDelete: Cascade)
+}
+
+model PackageInclusion {
+  id        String  @id @default(cuid())
+  text      String
+  order     Int     @default(0)
+  packageId String
+  package   Package @relation(fields: [packageId], references: [id], onDelete: Cascade)
+}
+
+model PackageExclusion {
+  id        String  @id @default(cuid())
+  text      String
+  order     Int     @default(0)
+  packageId String
+  package   Package @relation(fields: [packageId], references: [id], onDelete: Cascade)
+}
+
+model PackageItinerary {
+  id          String  @id @default(cuid())
+  day         Int
+  title       String
+  description String  @db.Text
+  packageId   String
+  package     Package @relation(fields: [packageId], references: [id], onDelete: Cascade)
+
+  @@unique([packageId, day])
+}
+
 model GalleryImage {
   id          String   @id @default(cuid())
   imageUrl    String   @db.Text

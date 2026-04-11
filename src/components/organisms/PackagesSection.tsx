@@ -7,9 +7,26 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Landmark } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { getPackagesByCategory } from "@/data/packages";
+
+export interface PackageItem {
+  id: string;
+  slug: string;
+  title: string;
+  destination: string;
+  duration: string;
+  groupSize: string;
+  price: string;
+  originalPrice: string | null;
+  rating: number;
+  reviews: number;
+  image: string | null;
+  featured: boolean;
+  category: string;
+}
 
 interface PackagesSectionProps {
+  indianPackages: PackageItem[];
+  internationalPackages: PackageItem[];
   showViewAll?: boolean;
 }
 
@@ -18,11 +35,12 @@ const tabs = [
   { id: "international", label: "International Tours", icon: Globe },
 ];
 
-export function PackagesSection({ showViewAll = true }: PackagesSectionProps) {
+export function PackagesSection({
+  indianPackages,
+  internationalPackages,
+  showViewAll = true,
+}: PackagesSectionProps) {
   const [activeTab, setActiveTab] = useState("indian");
-
-  const indianPackages = getPackagesByCategory("india");
-  const internationalPackages = getPackagesByCategory("international");
 
   const currentPackages =
     activeTab === "indian" ? indianPackages : internationalPackages;
@@ -66,16 +84,16 @@ export function PackagesSection({ showViewAll = true }: PackagesSectionProps) {
           {currentPackages.map((pkg, index) => (
             <PackageCard
               key={pkg.id}
-              id={pkg.id}
+              id={pkg.slug}
               title={pkg.title}
               destination={pkg.destination}
               duration={pkg.duration}
               groupSize={pkg.groupSize}
               price={pkg.price}
-              originalPrice={pkg.originalPrice}
+              originalPrice={pkg.originalPrice ?? ""}
               rating={pkg.rating}
               reviews={pkg.reviews}
-              image={pkg.image}
+              image={pkg.image ?? ""}
               featured={pkg.featured}
               index={index}
             />

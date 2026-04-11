@@ -8,6 +8,10 @@ import {
   Globe,
   Home,
   LogOut,
+  MapPin,
+  Package,
+  Info,
+  Phone,
 } from "lucide-react";
 import {
   Sidebar,
@@ -24,29 +28,18 @@ import {
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  {
-    label: "Dashboard",
-    href: "/dashboard",
-    icon: LayoutDashboard,
-  },
-  {
-    label: "Gallery",
-    href: "/dashboard/gallery",
-    icon: Images,
-  },
+  { label: "Dashboard",    href: "/dashboard",              icon: LayoutDashboard },
+  { label: "Destinations", href: "/dashboard/destinations", icon: MapPin },
+  { label: "Packages",     href: "/dashboard/packages",     icon: Package },
+  { label: "Gallery",      href: "/dashboard/gallery",      icon: Images },
 ];
 
 const siteLinks = [
-  {
-    label: "Home",
-    href: "/",
-    icon: Home,
-  },
-  {
-    label: "Destinations",
-    href: "/destinations",
-    icon: Globe,
-  },
+  { label: "Home",         href: "/",              icon: Home },
+  { label: "Destinations", href: "/destinations",  icon: Globe },
+  { label: "Packages",     href: "/our-packages",  icon: Package },
+  { label: "About Us",     href: "/about-us",      icon: Info },
+  { label: "Contact Us",   href: "/contact",       icon: Phone },
 ];
 
 interface DashboardSidebarProps {
@@ -75,9 +68,9 @@ export function DashboardSidebar({ email, signOutAction }: DashboardSidebarProps
                 <SidebarMenuItem key={item.href}>
                   <SidebarMenuButton
                     asChild
-                    isActive={pathname === item.href}
+                    isActive={pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href))}
                     className={cn(
-                      pathname === item.href && "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                      (pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href))) && "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
                     )}
                   >
                     <Link href={item.href}>

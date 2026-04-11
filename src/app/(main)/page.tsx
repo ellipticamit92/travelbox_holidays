@@ -4,13 +4,29 @@ import { DestinationsSection } from "@/components/organisms/DestinationsSection"
 import { PackagesSection } from "@/components/organisms/PackagesSection";
 import { WhyTravelWithUsSection } from "@/components/organisms/WhyTravelWithUsSection";
 import { TravelStoriesSection } from "@/components/organisms/TravelStoriesSection";
-import { Award, ChevronDown, MapPin, Plane } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import ContactCTA from "@/components/organisms/ContactCTA";
 import ReviewSection from "@/components/organisms/ReviewsSection";
 import PackageCategories from "@/components/organisms/PackageCategories";
 import Services from "@/components/organisms/Services";
+import { prisma } from "@/lib/prisma";
 
-export default function Home() {
+export default async function Home() {
+  const [destinations, packages] = await Promise.all([
+    prisma.destination.findMany({
+      select: { id: true, slug: true, name: true, subtitle: true, image: true, category: true, packages: true },
+      orderBy: { createdAt: "asc" },
+    }),
+    prisma.package.findMany({
+      select: { id: true, slug: true, title: true, destination: true, duration: true, groupSize: true, price: true, originalPrice: true, rating: true, reviews: true, image: true, featured: true, category: true },
+      orderBy: { createdAt: "asc" },
+    }),
+  ]);
+
+  const indianDestinations = destinations.filter((d) => d.category === "india");
+  const internationalDestinations = destinations.filter((d) => d.category === "international");
+  const indianPackages = packages.filter((p) => p.category === "india");
+  const internationalPackages = packages.filter((p) => p.category === "international");
   return (
     <>
       <section
@@ -133,10 +149,16 @@ export default function Home() {
         </div>
       </section>
       {/* Destinations Section */}
-      <DestinationsSection />
+      <DestinationsSection
+        indianDestinations={indianDestinations}
+        internationalDestinations={internationalDestinations}
+      />
       <PackageCategories />
       {/* Packages Section */}
-      <PackagesSection />
+      <PackagesSection
+        indianPackages={indianPackages}
+        internationalPackages={internationalPackages}
+      />
       <Services />
       {/* Why Travel With Us Section */}
       <WhyTravelWithUsSection />
