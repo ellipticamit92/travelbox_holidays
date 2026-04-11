@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { DestinationsSection } from "@/components/organisms/DestinationsSection";
