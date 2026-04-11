@@ -4,7 +4,7 @@ import { ContactInfoSection } from "@/components/organisms/ContactInfoSection";
 import { ContactForm } from "@/components/organisms/ContactForm";
 import { MapEmbed } from "@/components/molecules/MapEmbed";
 import { BusinessHoursCard } from "@/components/molecules/BusinessHoursCard";
-import { EMAIL, PHONE_NUMBER, PHONE_NUMBER_ONE } from "../constants/constants";
+import { EMAIL, PHONE_NUMBER, PHONE_NUMBER_ONE } from "@/app/constants/constants";
 
 export default function ContactPage() {
   const businessHours = [
